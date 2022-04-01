@@ -2,11 +2,11 @@
   "name": "submanager-node",
   "version": "1.0.0",
   "description": "Subscription manager app node APIs",
-  "main": "source/server.ts",
+  "main": "src/app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon source/server.ts",
-    "build": "rm -rf build/ && prettier --write source/ && tsc"
+    "start": "cd dist && node app",
+    "tsc": "tsc"
   },
   "author": "Hit Patel",
   "license": "ISC",
