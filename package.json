@@ -1,0 +1,25 @@
+{
+  "name": "submanager-node",
+  "version": "1.0.0",
+  "description": "Subscription manager app node APIs",
+  "main": "source/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon source/server.ts",
+    "build": "rm -rf build/ && prettier --write source/ && tsc"
+  },
+  "author": "Hit Patel",
+  "license": "ISC",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.17.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
