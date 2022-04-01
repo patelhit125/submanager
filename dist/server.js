@@ -4,14 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.App = void 0;
-/** source/server.ts */
-const http_1 = __importDefault(require("http"));
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const news_1 = __importDefault(require("./routes/news"));
 class App {
     constructor() {
-        var _a;
         this.router = (0, express_1.default)();
         /** Logging */
         this.router.use((0, morgan_1.default)('dev'));
@@ -42,9 +39,12 @@ class App {
             });
         });
         /** Server */
-        const httpServer = http_1.default.createServer(this.router);
-        const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 3000;
-        httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
+        // const httpServer = http.createServer(this.router);
+        const PORT = process.env.PORT || 3000;
+        // httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
+        this.router.listen(process.env.PORT || 3000, function () {
+            console.log("Express server listening on port %d", PORT);
+        });
     }
 }
 exports.App = App;

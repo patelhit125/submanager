@@ -41,8 +41,11 @@ export class App{
         });
 
         /** Server */
-        const httpServer = http.createServer(this.router);
-        const PORT: any = process.env.PORT ?? 3000;
-        httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
+        // const httpServer = http.createServer(this.router);
+        const PORT: any = process.env.PORT || 3000;
+        // httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
+        this.router.listen(process.env.PORT || 3000, function(){
+            console.log("Express server listening on port %d", PORT);
+        });
     }
 }
