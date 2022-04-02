@@ -16,7 +16,7 @@ const axios_1 = __importDefault(require("axios"));
 // getting all news
 const getNews = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     // get all news
-    let result = yield axios_1.default.get(`https://jsonplaceholder.typicode.com/posts`);
+    let result = yield axios_1.default.get(`https://jsonplaceholder.typicode.com/photos`);
     let posts = result.data;
     return res.status(200).json({
         message: posts
